@@ -64,7 +64,7 @@ def brnflows_csv(savfile,csvfile):
     if ierr != 0: return
     cflow = array2dict(cstrings, cdata)
     report("Branch flows from Saved case: %s\n" %savfile)
-    clnttls= "%10s,%10s,%10s,%10s,%10s,%10s\n" %('Number','Name','Area','Pgen','Pmax','Reserve')
+    clnttls= "%6s,%4s,%4s,%4s,%4s,%7s\n" %('Number','Name','Area','Pgen','Pmax','Reserve')
     report(clnttls)
 
     for i in range(len(iflow['number'])):

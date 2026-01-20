@@ -56,7 +56,7 @@ def brnflows_csv(savfile,csvfile):
     ierr, rarray = psspy.aareareal(sid=-1,flag=2,string=astring)
     if ierr != 0: return
     iareadata = array2dict(astring, rarray)
-    clnttls_1 = "%10s,%10s,%10s,%10s,%10s,%10s\n" %('Area','Number','From Generation','To Load','To(+)/From(-) Ties','To Losses')
+    clnttls_1 = "%4s,%6s,%10s,%6s,%10s,%8s\n" %('Area','Number','From Generation','To Load','To(+)/From(-) Ties','To Losses')
     report(clnttls_1)
     
     for i in range(len(iareaname['areaname'])):

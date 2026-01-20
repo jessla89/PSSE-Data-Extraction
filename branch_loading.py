@@ -76,8 +76,9 @@ def brnflows_csv(savfile,csvfile):
     cflow = array2dict(cstrings, cdata)
     report("Branch flows from Saved case: %s\n" %savfile)
 
-    clnttls = "%6s,%18s,%6s,%18s,%3s,%3s,%9s,%9s,%9s,%6s,%8s,%8s,%8s\n" %('FRMBUS',
-             'FROMBUSVOLT','TOBUS','TOBUSVOLT','CKT','STS','MW','MVAR','MVA','%I','MWLOSS','MVARLOSS','%MVA')
+    clnttls = "%6s,%6s,%6s,%6s,%3s,%3s,%9s,%9s,%9s,%9s,%6s,%8s,%4s,%2s,%4s\n" %('From Bus',
+             'From Bus Ext','To Bus','To Bus Ext','Ckt ID','Non Metered Bus','Branch I','Branch Flow MW',
+             'Branch Flow MVAR','Branch MVA','MW Loss','MVAR Loss','Rate','%I','%MVA')
     report(clnttls)
     for i in range(len(iflow['fromnumber'])):
         fromnum    = iflow['fromnumber'][i]
@@ -85,16 +86,18 @@ def brnflows_csv(savfile,csvfile):
         tonum      = iflow['tonumber'][i]
         toexname   = cflow['toexname'][i]
         ckt        = cflow['id'][i]
-        status     = iflow['status'][i]
+        nonmeter   = iflow['nmeternumber'][i]
+        amps       = rflow['amps'][i]
         p          = rflow['p'][i]
         q          = rflow['q'][i]
         mva        = rflow['mva'][i]
         ploss      = rflow['ploss'][i]
         qloss      = rflow['qloss'][i]
+        rate       = rflow['rate'][i]
         pcti       = rflow['pctrate'][i]
         pctr       = rflow['pctmvarate'][i]
-        report("%(fromnum)6d,%(fromexname)18s,%(tonum)6d,%(toexname)18s,%(ckt)3s,%(status)3d,\
-                %(p)9.2F,%(q)9.2F,%(mva)9.2F,%(ploss)8.2F,%(qloss)8.2F,%(pcti)6.2F,%(pctr)8.2F\n" %vars())
+        report("%(fromnum)7d,%(fromexname)10s,%(tonum)5d,%(toexname)8s,%(ckt)3s,%(nonmeter)3s,%(amps)4d,\
+                %(p)9.2F,%(q)9.2F,%(mva)9.2F,%(ploss)8.2F,%(qloss)8.2F,%(rate)6.2F,%(pcti)6.2F,%(pctr)8.2F\n" %vars())
     
     csvfile_h.close()
     print('\n Done .... Power Flow Results Report saved to file %s' % csvfile)

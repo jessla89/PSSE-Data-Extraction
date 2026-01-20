@@ -1,0 +1,8 @@
+Branch flows from Saved case: savnw.sav
+Number,Name,Area,Pgen,Pmax,Reserve
+   101,      NUC-A       ,     1,   588.59,   810.00,   221.41
+   102,      NUC-B       ,     1,   700.00,   810.00,   110.00
+   206,      URBGEN      ,     2,   699.84,   900.00,   200.16
+   211,      HYDRO_G     ,     2,   500.00,   616.25,   116.25
+  3011,      MINE_G      ,     5,   186.88,   900.00,   713.12
+  3018,      CATDOG_G    ,     5,    90.00,   117.00,    27.00
