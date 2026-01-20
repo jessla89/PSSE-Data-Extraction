@@ -1,5 +1,5 @@
 Bus Data from Saved case: savnw.sav
-Bus Number,  Bus Name,      Area,Base Voltage,Bus Voltage(PU),Bus Voltage(kV)
+Bus Number,Bus Name,Area,Base Voltage,Bus Voltage(PU),Bus Voltage(kV)
    101,NUC-A       ,                 1,21.60000038,1.02000000,22.03200000
    102,NUC-B       ,                 1,21.60000038,1.02000000,22.03200000
    151,NUCPANT     ,                 1,500.00000000,1.02200000,511.14900000
