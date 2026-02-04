@@ -43,3 +43,5 @@ These files are used to extract loading values greater than 80% for transformer 
 6.	limit_checking_Topology_6.ipynb- for Year 5, Topology 6
 
 
+Report of the results obtained from the analysis
+- resource_study_addition.pdf 
